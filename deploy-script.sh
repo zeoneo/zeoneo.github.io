@@ -17,6 +17,7 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 git checkout "$target_branch"
 git rebase "${remote_name}/${main_branch}"
 
+npm install -g gatsby
 npm run build
 git add "$build_dir"
 
