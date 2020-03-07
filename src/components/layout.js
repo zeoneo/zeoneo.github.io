@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
+// Change here for width
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
