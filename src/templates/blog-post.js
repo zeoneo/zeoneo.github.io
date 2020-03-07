@@ -1,10 +1,16 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import { DiscussionEmbed } from "disqus-react"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+
+export const disqusConfig = ({ slug, title }) => ({
+  shortname: process.env.GATSBY_DISQUS_NAME,
+  config: { identifier: slug, title },
+})
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -12,6 +18,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+ 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -61,6 +68,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <DiscussionEmbed {...disqusConfig({ post, siteTitle })} />
       </Layout>
     )
   }

@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Bare Metal Projects`,
+    title: `Zeo writes`,
     author: `Prakash Borkar (@zeoneo)`,
-    description: `My hobby prokjects.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: ``,
+    siteUrl: `https://zeoneo.github.io/`,
     social: {
       linkedin: `prakash-borkar`
     }
@@ -109,6 +109,7 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
-    }
+    },
+    `gatsby-plugin-sitemap`,
   ]
 };
