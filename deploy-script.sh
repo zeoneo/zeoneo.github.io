@@ -28,4 +28,6 @@ if [ $? -ne 0 ]; then
 fi
 
 git remote set-url "$remote_name" "$repo_uri" # includes access token
-git push --force-with-lease "$remote_name" "$target_branch"
+#git push --force-with-lease "$remote_name" "$target_branch"
+
+git subtree push --prefix public origin master
