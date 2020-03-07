@@ -14,8 +14,7 @@ cd "$GITHUB_WORKSPACE"
 git config user.name "$GITHUB_ACTOR"
 git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
-git checkout "$target_branch"
-git rebase "${remote_name}/${main_branch}"
+git checkout "$main_branch"
 
 npm install
 npm run build
@@ -28,6 +27,7 @@ if [ $? -ne 0 ]; then
 fi
 
 git remote set-url "$remote_name" "$repo_uri" # includes access token
-#git push --force-with-lease "$remote_name" "$target_branch"
 
-git subtree push --prefix public origin master
+git subtree split --prefix $build_dir -b master
+
+git push -f origin "$target_branch":"$target_branch"
