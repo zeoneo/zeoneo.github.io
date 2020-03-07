@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-export default ({ data }) => (
-  <Layout>
+export default ({ data, location }) => (
+  <Layout location={location}>
     <h1>About {data.site.siteMetadata.title}</h1>
     <p>
       We're the only site running on your computer dedicated to showing the best
