@@ -9,16 +9,16 @@ import { rhythm, scale } from "../utils/typography"
 export const disqusConfig = ({ slug, title }) => ({
   shortname: process.env.GATSBY_DISQUS_NAME,
   config: { identifier: slug, title },
-})
+});
 
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous, next, slug } = this.props.pageContext
 
- 
+    console.log(JSON.stringify(this.props))
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -68,7 +68,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <DiscussionEmbed {...disqusConfig({ post, siteTitle })} />
+        <DiscussionEmbed {...disqusConfig({ slug, title: post.frontmatter.title })} />
       </Layout>
     )
   }
