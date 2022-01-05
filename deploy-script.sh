@@ -2,7 +2,7 @@
 
 set -eu
 
-repo_uri="https://x-access-token:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+repo_uri="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY"
 
 remote_name="origin"
 main_branch="gh-pages"
