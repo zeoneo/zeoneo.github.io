@@ -4,13 +4,14 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import Tags from "../components/tags"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    console.log(JSON.stringify(this.props))
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -19,7 +20,8 @@ class BlogIndex extends React.Component {
         />
         <Bio />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title || node.fields.slug;
+          const tags = node.frontmatter.tags || [];
           return (
             <div key={node.fields.slug}>
               <h3
@@ -32,6 +34,9 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+             
+              {tags && tags.length > 0 ? ` - ` : ``}
+              <Tags>{tags}</Tags>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -65,6 +70,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

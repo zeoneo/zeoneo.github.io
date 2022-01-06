@@ -2,6 +2,7 @@
 title: Websockets with Tomcat
 date: "2022-01-05T10:40:32.169Z"
 description: Complete guide to integrate websockets in Java Project
+tags: ["Web", "Spring", "Websocket"]
 ---
 
 #### What is Websocket ? 
