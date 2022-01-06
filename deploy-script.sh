@@ -19,7 +19,7 @@ git checkout "$main_branch"
 npm install
 npm run build
 git add "$build_dir"
-git add package-lock.json
+git checkout HEAD -- package-lock.json
 
 git commit -m "updated GitHub Pages"
 if [ $? -ne 0 ]; then
