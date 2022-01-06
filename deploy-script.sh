@@ -19,6 +19,8 @@ git checkout "$main_branch"
 npm install
 npm run build
 git add "$build_dir"
+date >> version.txt
+git add version.txt
 git checkout HEAD -- package-lock.json
 
 git commit -m "updated GitHub Pages"
