@@ -111,5 +111,13 @@ module.exports = {
       }
     },
     `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://zeoneo.github.io/',
+        sitemap: 'https://zeoneo.github.io/sitemap/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
   ]
 };
