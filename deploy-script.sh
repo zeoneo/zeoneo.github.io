@@ -16,7 +16,7 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
 git checkout "$main_branch"
 
-npm install
+npm install --legacy-peer-deps
 npm run build
 git add "$build_dir"
 date >> version.txt
