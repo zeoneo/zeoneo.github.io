@@ -13,7 +13,7 @@ If you like this setup and would like replicate it then follow these commands
 - `rm -rf .git  #This will remove all of my git commit history`
 
 - `npm install`
-
+- `npm install gatsby -g`
 - `gatsby develop`
 
 
@@ -26,7 +26,3 @@ If you like this setup and would like replicate it then follow these commands
 -   You will need to generate the personal access key using documentation given [here](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
 -   Add that access token in the repository as secret with name `DEPLOY_TOKEN`
 -   Once you push all the set up on `{your-username}.github.io` and branch `gh-pages` your blog should be up at any second. Access it using `https://{your-username}.github.io`
-
-
-If you have any other questions please contact me on [Twitter](https://twitter.com/ze0ne0).
-
